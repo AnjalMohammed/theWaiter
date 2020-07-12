@@ -5,14 +5,23 @@ import Theme from './styles/theme';
 import { Wrapper } from './styles/AppStyles';
 import CopyRightText from './Components/CopyRightText';
 
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers/rootReducer'
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+let store = createStore(rootReducer, composeWithDevTools());
+
 const App = (props) => {
     return (
-        <ThemeProvider theme={Theme}>
-            <Wrapper>
-                <Routes />
-                <CopyRightText />
-            </Wrapper>
-        </ThemeProvider>
+        <Provider store={store}>
+            <ThemeProvider theme={Theme}>
+                <Wrapper>
+                    <Routes />
+                    <CopyRightText />
+                </Wrapper>
+            </ThemeProvider>
+        </Provider>
     )
 };
 

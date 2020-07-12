@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 import SearchSection from './Components/SearchSection';
 import SelectionSection from './Components/SelectionSection';
-
+import { connect } from 'react-redux'
 class Homepage extends Component {
 
     render() {
         return (
             <>
-                <SearchSection />
-                <SelectionSection />
+                {
+                    !this.props.loggedIn ?
+                        <Redirect to="/login" />
+                        :
+                        <>
+                            <SearchSection />
+                            <SelectionSection />
+                        </>
+                }
             </>
         );
     }
 }
 
-export default withRouter(Homepage);
+const mapStateToProps = ({
+    login: { loggedIn }
+}) => ({
+    loggedIn
+})
+
+export default withRouter(connect(mapStateToProps)(Homepage));

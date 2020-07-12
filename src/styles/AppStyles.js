@@ -14,10 +14,10 @@ export const PrimaryButton = styled(Button)`
     background-color: ${props => props.theme.colors.primary}
     border-color: ${props => props.theme.colors.primary}
     color: white;
-    width: 25%;
+    width: ${props => props.width ? props.width : ''};
     height: 40px;
     font-weight: bold;
-    min-width: 100px;
+    min-width: ${props => props.nominwidth ? '' : '100px'};
 
     :hover{
         background-color: transparent;

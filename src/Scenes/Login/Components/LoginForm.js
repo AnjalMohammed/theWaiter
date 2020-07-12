@@ -4,6 +4,10 @@ import { Button, Form, Icon } from 'antd';
 import { FormInput, Label, Text, InputIcon } from '../styles';
 import { PrimaryButton } from '../../../styles/AppStyles';
 
+import { connect } from 'react-redux';
+
+import { login } from '../../../actions/LoginActions'
+
 function hasErrors(fieldsError) {
     return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
@@ -22,6 +26,8 @@ class LoginForm extends Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                // this.props.history.push('/')
+                this.props.login()
             }
         });
     }
@@ -44,7 +50,6 @@ class LoginForm extends Component {
                             <div>
                                 <Label>Username</Label>
                                 <FormInput
-                                    // prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                     placeholder="Enter your username"
                                 />
                                 <InputIcon type='user' />
@@ -101,6 +106,19 @@ class LoginForm extends Component {
         );
     }
 }
-const WrappedLoginForm = Form.create({ name: 'loginForm' })(LoginForm);
+
+
+const mapStateToProps = ({
+    login: { loggedIn }
+}) => ({
+    loggedIn
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    login: () => dispatch(login())
+})
+
+const WrappedLoginForm = Form.create({ name: 'loginForm' })
+    (connect(mapStateToProps, mapDispatchToProps)(LoginForm));
 
 export default withRouter(WrappedLoginForm);

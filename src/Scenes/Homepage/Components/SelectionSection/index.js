@@ -34,8 +34,7 @@ class SelectionSection extends Component {
                             key={title}
                             hoverable
                             onClick={() => {
-                                alert('hello')
-                                this.props.history.push('/login')
+                                this.props.history.push('/list')
                             }}
                             style={{ width: 240, margin: '1rem' }}
                             cover={

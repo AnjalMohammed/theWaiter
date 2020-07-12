@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { MasterSearchDiv, HomepageLogoDiv } from './styles';
 import LogoText from '../../../../Components/LogoText';
-import { SelectionMasterDiv, HomepageSelect, HomepageInput } from './styles';
+import { SelectionMasterDiv, HomepageSelect, HomepageInput, UserIcon } from './styles';
+import TopNavBar from '../../../../Components/TopNavBar';
+
 
 class SearchSection extends Component {
-
     render() {
         return (
             <MasterSearchDiv>
+                <TopNavBar />
                 <LogoText
                     margin="0 2rem"
                     color="white"

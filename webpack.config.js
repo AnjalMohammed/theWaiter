@@ -13,7 +13,8 @@ module.exports = () => {
         entry: path.join(__dirname, '/src/entryPoint/index.js'),
         output: {
             filename: 'build.js',
-            path: path.join(__dirname, './dist')
+            path: path.join(__dirname, './dist'),
+            publicPath: '/theWaiter',
         },
         module: {
             rules: [
