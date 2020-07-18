@@ -14,7 +14,7 @@ module.exports = () => {
         output: {
             filename: 'build.js',
             path: path.join(__dirname, './dist'),
-            publicPath: '/theWaiter',
+            // publicPath: '/theWaiter/',
         },
         module: {
             rules: [

@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://anjalmohammed.github.io/theWaiter/",
   "scripts": {
-    "start": "webpack-dev-server --mode development --port 8080 --open --hot",
+    "start": "webpack-dev-server --mode development --port 8080 --open --hot --history-api-fallback",
     "build": "webpack -p --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gh-pages -d dist"

@@ -4,7 +4,7 @@ import { Input, Select } from 'antd';
 const { Search } = Input;
 
 export const MasterSearchDiv = styled.div`
-    height: 60vh;
+    height: 53vh;
     position: relative;
     background: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png") fixed center; 
     background-size: 100%;
@@ -12,6 +12,10 @@ export const MasterSearchDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    
+    @media only screen and (max-width: 769px) {
+        background: url("https://purewows3.imgix.net/images/articles/2019_01/15-Minute_Mezze_Plate_With_Pita_Bread_Recipe.jpg?auto=format,compress&cs=strip") fixed center; 
+    }
 `;
 
 

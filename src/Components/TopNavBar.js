@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
 import { connect } from 'react-redux';
 import { logout } from '../actions/LoginActions';
-import { UserIcon } from '../styles/ComponentStyles';
+import { UserIcon, WebDiv } from '../styles/ComponentStyles';
 import LogoText from './LogoText';
 
 
@@ -29,21 +29,21 @@ class TopNavBar extends Component {
 
     render() {
         return (
-            <div className="flex justify-between items-center absolute fluid" style={{ padding: '0 20%', top: '10px' }}>
-                <div>
+            <div className="flex justify-between items-center absolute fluid" style={{ padding: '0 7%', top: '10px' }}>
+                <WebDiv>
                     <MobileOutlined /> Get the App
-                </div>
+                </WebDiv>
                 {
                     this.props.logoNeeded &&
                     <LogoText {...this.props.logoStyles}
                         redirect={this.props.redirect}
                     />
                 }
-                <div>
+                <WebDiv>
                     <Dropdown trigger={["click"]} placement="bottomCenter" overlay={this.menu}>
                         <UserIcon />
                     </Dropdown>
-                </div>
+                </WebDiv>
             </div>
         );
     }

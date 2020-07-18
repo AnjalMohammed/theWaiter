@@ -28,3 +28,17 @@ export const UserIcon = styled(UserSwitchOutlined)`
     font-size: 150%;
     border-radius: 50%;
 `;
+
+export const WebDiv = styled.div`
+    display: block;
+    @media only screen and (max-width: 769px) {
+        display: none;
+    }
+`;
+
+export const MobDiv = styled.div`
+    display: none;
+    @media only screen and (min-width: 769px) {
+        display: block;
+    }
+`;
